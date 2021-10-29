@@ -218,7 +218,7 @@ btn.onclick = () => {
   };
   async function task15(api) {
     try {
-      return await fetch(`${api}` , option5)
+      return await fetch(`${api}` , option5).then(response=>response.json())
 
     } catch (error) {
       console.log(error);
@@ -226,13 +226,13 @@ btn.onclick = () => {
   }
     switch (select.value) {
       case "posts":
-         task15("https://jsonplaceholder.typicode.com/posts").then(response=>response.json()).then((res)=>{console.log(res)})
+         task15("https://jsonplaceholder.typicode.com/posts").then((res)=>{console.log(res)})
         break;
       case "users":
-        task15("https://jsonplaceholder.typicode.com/users").then(response=>response.json()).then((res)=>{console.log(res)})
+        task15("https://jsonplaceholder.typicode.com/users").then((res)=>{console.log(res)})
         break;
       case "comments":
-        task15("https://jsonplaceholder.typicode.com/comments").then(response=>response.json()).then((res)=>{console.log(res)})
+        task15("https://jsonplaceholder.typicode.com/comments").then((res)=>{console.log(res)})
         break;
   
       default:
